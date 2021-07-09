@@ -1,9 +1,9 @@
 <a href="/new">Uusi kysely</a>
 <hr>
 {% for poll in polls %}
-Aihe: {{ poll[1] }} <br>
-Luotu: {{ poll[2].strftime("%Y-%m-%d %H:%M:%S") }} <br>
-<a href="/poll/{{ poll[0] }}">Mene kyselyyn</a> |
-<a href="/result/{{ poll[0] }}">Näytä tulokset</a> <br>
+Aihe: {{ poll.topic }} <br>
+Luotu: {{ poll.created_at.strftime("%Y-%m-%d %H:%M:%S") }} <br>
+<a href="/poll/{{ poll.id }}">Mene kyselyyn</a> |
+<a href="/result/{{ poll.id }}">Näytä tulokset</a> <br>
 <hr>
 {% endfor %}
