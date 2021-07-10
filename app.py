@@ -50,7 +50,7 @@ def answer():
         sql = "INSERT INTO answers (choice_id, sent_at) VALUES (:choice_id, NOW())"
         db.session.execute(sql, {"choice_id":choice_id})
         db.session.commit()
-    return redirect("/result/"+str(poll_id))
+    return redirect("/result/" + str(poll_id))
 
 @app.route("/result/<int:id>")
 def result(id):
